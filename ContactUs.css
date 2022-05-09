@@ -1,0 +1,232 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgb(34, 106, 129),rgb(145, 71, 163));  
+}
+header{
+  position: absolute;
+  top: 27px;;
+  right: 25px;
+  z-index: 999;
+  width: 100%;
+  
+}
+.nav{
+  float: right;
+  margin-right: 10px;
+}
+
+.nav ul{
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.nav ul li{
+  list-style: none;
+  float: left;
+  margin-left: 25px;
+}
+.nav ul li a{
+  transition:all 0.5s ease-in-out;
+  font-size: 17px;
+  color: white;
+  text-transform:capitalize;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: 'Poppins',sans-serif;
+}
+
+.nav ul li a:hover{
+  color: yellow;
+  font-size: 20px;
+  border-bottom: 2px solid;
+  text-decoration: none;
+}
+
+.burger{
+  display: none;
+  cursor: pointer;
+}
+
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media  screen and (max-width:768px) {
+  body{
+      overflow-x: hidden;
+  }
+
+  .nav-links{
+      position: absolute;
+      right: -171px;
+      height: 92vh;
+      top: 4vh;
+      font-size: 20px;
+      background:transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      display: none;
+    
+      }
+  
+  
+
+  .nav-links li{
+      opacity: 0;
+  }
+
+  .burger{
+      display: block;
+  }
+  
+}
+.nav-active{
+  transform: translatex(-10%);
+  display: flex;
+  padding:0;
+}
+
+@keyframes navLinkFade{
+  form{
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to{
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+.container{
+  width: 80%;
+  padding: 20px;
+  margin-top: 58px;
+}
+.container h2{
+  width: 100%;
+  color: #45f3ff;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container .row{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.container .row .col{
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+.container .row .inputBox{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+.container .row .inputBox input,
+.container .row .inputBox.textarea textarea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+.container .row .inputBox .text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.container .row .inputBox input:focus + .text,
+.container .row .inputBox input:valid + .text{
+  top: -35px;
+  left: -10px;
+}
+.container .row .inputBox .line{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.container .row .inputBox input:focus~ .line,
+.container .row .inputBox input:valid~ .line{
+  height: 100%;
+}
+.container .row .inputBox .textarea{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0; 
+}
+.container .row .inputBox .textarea textarea{
+  height: 100%;
+  resize: none;
+}
+.container .row .inputBox textarea:focus + .text,
+.container .row .inputBox textarea:valid + .text{
+  top: -35px;
+  left: -10px;
+}
+.container .row .inputBox textarea:focus~ .line,
+.container .row .inputBox textarea:valid~ .line{
+  height: 100%;
+}
+input[type="submit"]{
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #45f3ff;
+  color: #000;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
