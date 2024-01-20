@@ -221,7 +221,7 @@
                 <div class="copyrights">
                     <br>Your dream our Responsibility..!!<br>
                     <h5>Made with 💜 by my team</h5>
-                    <p>© 2k22 MentorMate Platform
+                    <p>© 2k24 MentorMate Platform
                     <p>
                 </div>
             </div>
